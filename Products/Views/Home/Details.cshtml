@@ -1,0 +1,73 @@
+﻿@model Products.Models.product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="text-align:center">@Html.DisplayFor(model => model.Pname) Detail</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pcategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pcategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pstock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pstock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mfdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mfdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expdate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Update", "Edit", new { id = Model.PID }) |
+    @Html.ActionLink("View Products", "Index")
+</p>

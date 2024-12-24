@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Products.Models.product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center">Available Products in our Stock.</h2>
+
+<p>
+    @Html.ActionLink("Add Product", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pcategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pstock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mfdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expdate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pcategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pprice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pstock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Supplier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mfdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PID })
+        </td>
+    </tr>
+}
+
+</table>
