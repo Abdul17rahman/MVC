@@ -13,10 +13,10 @@ namespace ass_4.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CarsEntities1 : DbContext
+    public partial class CarsEntities2 : DbContext
     {
-        public CarsEntities1()
-            : base("name=CarsEntities1")
+        public CarsEntities2()
+            : base("name=CarsEntities2")
         {
         }
     
@@ -26,5 +26,6 @@ namespace ass_4.Model
         }
     
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<Vehicle> Vehicles { get; set; }
     }
 }

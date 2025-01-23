@@ -1,14 +1,82 @@
-﻿
+﻿@model IEnumerable<ass_4.Model.Vehicle>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@{
+    <form action="@Url.Action("Logout", "Home")" method="post">
+        <button type="submit">Logout</button>
+    </form>
+}
 
+<h2>Home Page</h2>
 
-<main>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.condition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supplier)
+        </th>
+        <th></th>
+    </tr>
 
-    <h1>This is the login page.</h1>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.yom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supplier)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.vid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.vid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.vid })
+            </td>
+        </tr>
+    }
 
-</main>
-
+</table>
